@@ -1,4 +1,4 @@
-baseURL = "https://diving-cat-blog.pages.dev/"
+baseURL = "https://blog.siai.pub/"
 languageCode = "zh-cn"
 title = "Diving_cat"
 theme = "PaperMod"
