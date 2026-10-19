@@ -1,0 +1,134 @@
+{{ define "main" }}
+<style>
+/* 仅留言板页面生效，不干涉文章页面 */
+.chat-page .post-content {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 24px;
+}
+.chat-page h1 {
+    font-size: 2.6rem;
+    text-align: center;
+    margin-bottom:0.6rem;
+}
+.chat-page .chat-desc {
+    text-align:center;
+    color:var(--secondary);
+    font-size:1.1rem;
+    margin-bottom:2.5rem;
+}
+/* 隐藏留言页面面包屑 */
+.chat-page .breadcrumbs {
+    display: none !important;
+}
+/* Waline外层卡片容器 */
+.chat-page #waline {
+    padding:28px;
+    border-radius:16px;
+    background:var(--entry);
+    box-shadow: 0 3px 16px rgba(0,0,0,0.07);
+}
+/* 输入框加高 */
+.chat-page #waline .wl-editor {
+    min-height: 140px !important;
+}
+/* 评论列表全局间距 */
+.chat-page #waline .wl-comment {
+    padding:18px 0;
+    border-bottom: 1px solid rgba(128,128,128,0.12) !important;
+}
+/* 头像圆形 */
+.chat-page #waline .wl-avatar img {
+    border-radius: 50% !important;
+}
+/* 评论文字字号 */
+.chat-page #waline .wl-content p {
+    font-size: 1.02rem;
+    line-height:1.75;
+}
+/* 评论元信息（昵称、时间） */
+.chat-page #waline .wl-meta {
+    font-size:0.92rem;
+}
+/* 页面底部提示文字 */
+.chat-page .tip-text {
+    margin-top: 2rem;
+    text-align:center;
+    color:var(--tertiary);
+    font-size:0.9rem;
+}
+.chat-page #waline .wl-power {
+    font-size:0.75rem;
+    opacity:0.25;
+}
+
+/* 移动端适配 */
+@media (max-width:720px){
+    .chat-page .post-content {
+        padding:0 12px;
+    }
+    .chat-page h1 {
+        font-size:2rem;
+    }
+    .chat-page #waline {
+        padding:16px;
+    }
+    .chat-page #waline .wl-editor {
+        min-height:120px !important;
+    }
+    .chat-page #waline .wl-comments-title::before{
+        font-size:1.4rem;
+    }
+}
+</style>
+
+<div class="post-content md-content chat-page">
+  <h1>留言板</h1>
+  <div class="chat-desc">欢迎匿名闲聊，消息实时展示。</div>
+  <div id="waline"></div>
+  <div class="tip-text">💡 提示：昵称必填，邮箱选填；请文明发言。</div>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.umd.js"></script>
+
+<script>
+Waline.init({
+  el: '#waline',
+  serverURL: 'https://walinework.siai.pub',
+  path: "/chat/",
+  meta: ['nick','mail'],
+  requiredMeta: ['nick'],
+  anonymous: true,
+  lang: 'zh-CN',
+  pageview: false,
+  pageSize:15,
+  emoji: [
+    '//unpkg.com/@waline/emojis@1.1.0/weibo',
+    '//unpkg.com/@waline/emojis@1.1.0/bilibili'
+  ],
+  placeholder: "写下你的留言，邮箱选填，匿名提交即可。",
+
+  // 关键：把 Waline 内置“评论”文字全部改成“留言”
+  locale: {
+    comment: '留言',
+    comments: '留言',
+    reply: '回复留言',
+    cancelReply: '取消回复',
+    replyPlaceholder: '回复这条留言...',
+    placeholder: '写下你的留言，邮箱选填，匿名提交即可。',
+    empty: '暂无留言',
+    commentsTitle: '%s 留言',
+    replyTitle: '回复留言',
+    submit: '提交',
+    login: '登录',
+    logout: '退出',
+    like: '赞',
+    dislike: '踩',
+    sortAsc: '按正序',
+    sortDesc: '按倒序',
+    sortHot: '按热度'
+  }
+});
+</script>
+</div>
+{{ end }}

@@ -1,0 +1,57 @@
+baseURL = "http://localhost:1313/"
+languageCode = "zh-cn"
+title = "Diving_cat"
+theme = "PaperMod"
+
+[params]
+  #homeMode = "full"
+  showPostNavLinks = true
+  showBreadCrumbs = true
+  showCodeCopyButtons = true
+  disableSpecial1stPost = false
+  autoHeadingID = true
+  hideListTitle = true
+  comments = true
+  mainSections = ["posts"]
+  ShowPageNums = true
+  enableInstantClick = false
+[params.homeInfoParams]
+[params.profileMode]
+  enabled = false
+  title = "潜水猫舍"
+  subtitle = "记录技术思考、随笔与读书笔记"
+
+[menu]
+  [[menu.main]]
+    name = "首页"
+    pageRef = "/"
+    weight = 1
+  [[menu.main]]
+    name = "文章"
+    pageRef = "/posts"
+    weight = 2
+  [[menu.main]]
+    name = "随笔"
+    pageRef = "/essay"
+    weight = 3
+  [[menu.main]]
+    name = "标签"
+    pageRef = "/tags"
+    weight = 4
+  [[menu.main]]
+    name = "留言"
+    pageRef = "/chat"
+    weight = 5 
+[outputs]
+  home = ["HTML", "JSON"]
+[pagination]
+pagerSize = 10
+path = "page"
+disableAliases = false 
+[params.waline]
+enable = true
+serverURL = "https://walinework.siai.pub" # 这里填你部署得到的域名
+pageview = false
+visitor = false
+[markup.goldmark.renderer]
+unsafe = true

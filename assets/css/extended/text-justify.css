@@ -1,0 +1,26 @@
+/*中文段落首行缩进2汉字 + 两端对齐*/
+.post-content.md-content p {
+    text-indent: 2em;
+    text-align: justify;
+}
+
+/* 禁止两端对齐、禁止缩进：标题、列表、引用、代码块、表格 */
+.post-content.md-content h1,
+.post-content.md-content h2,
+.post-content.md-content h3,
+.post-content.md-content h4,
+.post-content.md-content h5,
+.post-content.md-content h6,
+.post-content.md-content ul,
+.post-content.md-content ol,
+.post-content.md-content blockquote,
+.post-content.md-content pre,
+.post-content.md-content table {
+    text-indent: 0;
+    text-align: left;
+}
+
+/*隐藏文章列表页Posts大标题*/
+.page-header h1 {
+    display: none;
+}
