@@ -50,7 +50,7 @@ path = "page"
 disableAliases = false 
 [params.waline]
 enable = true
-serverURL = "https://walinework.siai.pub" # 这里填你部署得到的域名
+serverURL = "https://diviang-cat-waline-on-worker.499680982.workers.dev" # 这里填你部署得到的域名
 pageview = false
 visitor = false
 [markup.goldmark.renderer]
