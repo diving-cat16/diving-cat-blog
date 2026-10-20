@@ -33,13 +33,13 @@
 /* PaperMod首页post卡片标题 */
 .home-info-post-title,
 .post-entry h2.post-entry-title {
-    font-size: 1.8rem !important;
+    font-size: 1.45rem !important;
 }
 
 /* 移动端适配首页标题 */
 @media (max-width:640px) {
     .home-info-post-title,
     .post-entry h2.post-entry-title {
-        font-size: 1.4rem !important;
+        font-size: 1.25rem !important;
     }
 }
