@@ -1,0 +1,31 @@
+/* 文章页面：文章主标题 h1（就是 frontmatter title） */
+.post-single h1.post-title {
+    /* 降一级，原来PaperMod默认 ~2.25rem，改成 1.8rem，等同于原生h2大小 */
+    font-size: 1.8rem !important;
+}
+
+/* 文章内 ## 二级标题 h2 */
+.post-content h2 {
+    /* 原生h2降级，从1.75rem → 1.45rem，等同于原生h3 */
+    font-size: 1.45rem !important;
+}
+
+/* 【可选】顺带把h3、h4也同步降一级，整套标题层级统一，按需启用 */
+/*
+.post-content h3 {
+    font-size: 1.25rem !important;
+}
+.post-content h4 {
+    font-size: 1.1rem !important;
+}
+*/
+
+/* 移动端适配，手机端再缩小一点，避免文字太大 */
+@media (max-width:640px) {
+    .post-single h1.post-title {
+        font-size: 1.45rem !important;
+    }
+    .post-content h2 {
+        font-size: 1.2rem !important;
+    }
+}
