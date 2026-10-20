@@ -3,10 +3,9 @@
 <script src="https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.umd.js"></script>
 
 <script>
-window.addEventListener('load', function () {
-  // 确认#waline元素存在再初始化
+function initWaline() {
   const walineEl = document.querySelector('#waline');
-  if(walineEl){
+  if(walineEl && window.Waline) {
     Waline.init({
       el: '#waline',
       serverURL: 'https://walinework.siai.pub',
@@ -19,6 +18,9 @@ window.addEventListener('load', function () {
       noCopyright: true,
       emoji: false
     });
+  } else {
+    setTimeout(initWaline, 300);
   }
-});
+}
+window.addEventListener('load', initWaline);
 </script>
