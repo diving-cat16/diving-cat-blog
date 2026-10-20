@@ -10,15 +10,15 @@
     font-size: 1.45rem !important;
 }
 
-/* 【可选】顺带把h3、h4也同步降一级，整套标题层级统一，按需启用 */
-/*
+/* h3、h4降一级，整套标题层级统一，按需启用 */
+
 .post-content h3 {
     font-size: 1.25rem !important;
 }
 .post-content h4 {
     font-size: 1.1rem !important;
 }
-*/
+
 
 /* 移动端适配，手机端再缩小一点，避免文字太大 */
 @media (max-width:640px) {
@@ -27,5 +27,19 @@
     }
     .post-content h2 {
         font-size: 1.2rem !important;
+    }
+}
+/* ========== 首页封面/列表文章标题 ========== */
+/* PaperMod首页post卡片标题 */
+.home-info-post-title,
+.post-entry h2.post-entry-title {
+    font-size: 1.8rem !important;
+}
+
+/* 移动端适配首页标题 */
+@media (max-width:640px) {
+    .home-info-post-title,
+    .post-entry h2.post-entry-title {
+        font-size: 1.4rem !important;
     }
 }
