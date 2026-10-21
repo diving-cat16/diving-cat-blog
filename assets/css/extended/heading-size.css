@@ -29,16 +29,17 @@
         font-size: 1.2rem !important;
     }
 }
-/* ========== 首页封面/列表文章标题 ========== */
-/* PaperMod首页post卡片标题 */
-.home-info-post-title,
+
+/* ========== 首页：置顶卡片 + 普通列表文章标题 ========== */
+/* 置顶第一篇 .first-entry，普通列表 post-entry */
+.first-entry h2.post-entry-title,
 .post-entry h2.post-entry-title {
     font-size: 1.45rem !important;
 }
 
-/* 移动端适配首页标题 */
+/* 移动端适配首页标题（含置顶） */
 @media (max-width:640px) {
-    .home-info-post-title,
+    .first-entry h2.post-entry-title,
     .post-entry h2.post-entry-title {
         font-size: 1.25rem !important;
     }
