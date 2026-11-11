@@ -35,13 +35,17 @@ theme = "PaperMod"
     pageRef = "/essay"
     weight = 3
   [[menu.main]]
+    name = "小说"
+    pageRef = "/novel"
+    weight = 4 
+  [[menu.main]]
     name = "标签"
     pageRef = "/tags"
-    weight = 4
+    weight = 5
   [[menu.main]]
     name = "留言"
     pageRef = "/chat"
-    weight = 5 
+    weight = 6 
 [outputs]
   home = ["HTML", "JSON"]
 [pagination]
